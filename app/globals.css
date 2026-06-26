@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-navy: #0b1f5e;
+  --color-navy-dark: #071242;
+  --color-gold: #ffd200;
+  --color-gold-dark: #e6bd00;
+  --color-sky: #e8f4f8;
+  --color-sky-dark: #d0e8f0;
+  --color-crimson: #dc2626;
+  --color-offwhite: #fafaf7;
+  --color-gray-soft: #f5f5f0;
+
+  /* Typography */
+  --font-sans: var(--font-raleway), system-ui, sans-serif;
+  --font-heading: var(--font-raleway), system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+
+  /* Radius */
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  background: #ffffff;
+  color: #1a1a2e;
+  font-family: var(--font-sans);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Raleway for all headings — Playfair applied explicitly per component */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Font utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom utility: gold squiggle underline */
+.squiggle {
+  position: relative;
+  display: inline-block;
+}
+
+.squiggle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6'%3E%3Cpath d='M0 3 Q7.5 0 15 3 Q22.5 6 30 3 Q37.5 0 45 3 Q52.5 6 60 3' stroke='%23ffd200' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center;
+}
+
+/* Shine italic gold */
+.shine-text {
+  font-style: italic;
+  color: #ffd200;
+}
+
+/* Badge pill */
+.badge-navy {
+  background: #0b1f5e;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+}
+
+.badge-gold {
+  background: #ffd200;
+  color: #0b1f5e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+}
+
+.badge-outline {
+  background: transparent;
+  color: #0b1f5e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  border: 1.5px solid #0b1f5e;
+  letter-spacing: 0.04em;
+}
+
+/* Vanguard Kids interaction polish */
+.vk-action-primary,
+.vk-action-secondary,
+.vk-action-light,
+.vk-action-outline,
+.vk-icon-button,
+.vk-linked-card,
+.vk-soft-card,
+.vk-faq-row,
+.vk-subtle-link,
+.vk-visual-frame,
+.vk-gallery-frame,
+.vk-visual-lift {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.vk-action-primary,
+.vk-action-secondary,
+.vk-action-light,
+.vk-action-outline,
+.vk-icon-button {
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .vk-action-primary.text-xs,
+  .vk-action-secondary.text-xs,
+  .vk-action-light.text-xs,
+  .vk-action-outline.text-xs {
+    font-size: 0.9375rem !important;
+    line-height: 1.2;
+  }
+
+  .vk-action-primary.text-sm,
+  .vk-action-secondary.text-sm,
+  .vk-action-light.text-sm,
+  .vk-action-outline.text-sm {
+    font-size: 1.125rem !important;
+    line-height: 1.2;
+  }
+
+  .vk-action-primary.text-base,
+  .vk-action-secondary.text-base,
+  .vk-action-light.text-base,
+  .vk-action-outline.text-base {
+    font-size: 1.25rem !important;
+    line-height: 1.2;
+  }
+
+  .vk-action-outline[aria-label="Toggle language"] {
+    font-size: 0.75rem !important;
+  }
+}
+
+.vk-action-primary:focus-visible,
+.vk-action-secondary:focus-visible,
+.vk-action-light:focus-visible,
+.vk-action-outline:focus-visible,
+.vk-icon-button:focus-visible,
+.vk-linked-card:focus-visible,
+.vk-faq-row:focus-visible,
+.vk-subtle-link:focus-visible {
+  outline: 2px solid #ffd200;
+  outline-offset: 4px;
+}
+
+.vk-action-primary:not(:disabled):hover {
+  background-color: #ffe05c;
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.18), 0 14px 30px rgba(255, 210, 0, 0.26);
+}
+
+.vk-action-secondary:not(:disabled):hover {
+  background-color: #17347f;
+  box-shadow: 0 0 0 4px rgba(11, 31, 94, 0.14), 0 14px 30px rgba(11, 31, 94, 0.22);
+}
+
+.vk-action-light:not(:disabled):hover {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.16), 0 14px 30px rgba(11, 31, 94, 0.16);
+}
+
+.vk-action-outline:not(:disabled):hover {
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.14), 0 12px 26px rgba(11, 31, 94, 0.14);
+}
+
+.vk-action-primary:not(:disabled):active,
+.vk-action-secondary:not(:disabled):active,
+.vk-action-light:not(:disabled):active,
+.vk-action-outline:not(:disabled):active,
+.vk-icon-button:not(:disabled):active {
+  transform: translateY(0) scale(0.99);
+}
+
+.vk-linked-card:hover {
+  border-color: rgba(255, 210, 0, 0.6);
+  box-shadow: 0 18px 42px rgba(11, 31, 94, 0.12);
+}
+
+.vk-soft-card:hover,
+.vk-soft-card:focus-within {
+  border-color: rgba(26, 52, 150, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 210, 0, 0.08), 0 14px 34px rgba(11, 31, 94, 0.1);
+}
+
+.vk-faq-row:hover,
+.vk-faq-row:focus-within {
+  border-color: rgba(26, 52, 150, 0.28);
+  box-shadow: 0 12px 30px rgba(11, 31, 94, 0.08);
+}
+
+.vk-faq-row:hover .vk-faq-icon,
+.vk-faq-row:focus-within .vk-faq-icon {
+  background-color: #ffd200;
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.16);
+}
+
+.vk-icon-button:not(:disabled):hover {
+  background-color: #17347f;
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.16), 0 12px 26px rgba(11, 31, 94, 0.22);
+}
+
+.vk-subtle-link:hover {
+  text-shadow: 0 0 18px rgba(255, 210, 0, 0.28);
+}
+
+.vk-dot-button:hover,
+.vk-dot-button:focus-visible {
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.16);
+}
+
+.vk-visual-frame,
+.vk-gallery-frame {
+  border-color: rgba(26, 52, 150, 0.72);
+}
+
+.vk-visual-frame:hover,
+.vk-visual-frame:focus-within {
+  border-color: rgba(255, 210, 0, 0.72);
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.12), 0 24px 56px rgba(11, 31, 94, 0.22);
+}
+
+.vk-gallery-frame:hover,
+.vk-gallery-frame:focus-within {
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 0 0 4px rgba(255, 210, 0, 0.13), 0 24px 56px rgba(11, 31, 94, 0.18);
+}
+
+.vk-visual-image {
+  transition: transform 300ms ease-out, filter 300ms ease-out;
+  will-change: transform;
+}
+
+.vk-visual-frame:hover .vk-visual-image,
+.vk-visual-frame:focus-within .vk-visual-image {
+  transform: scale(1.008);
+  filter: saturate(1.04);
+}
+
+.vk-gallery-frame:hover .vk-visual-image,
+.vk-gallery-frame:focus-within .vk-visual-image {
+  transform: none;
+  filter: saturate(1.03);
+}
+
+.vk-arrow-nudge svg,
+.vk-arrow-nudge [aria-hidden="true"] {
+  transition: transform 200ms ease-out;
+}
+
+.vk-arrow-nudge:hover svg,
+.vk-arrow-nudge:focus-visible svg,
+.vk-arrow-nudge:hover [aria-hidden="true"],
+.vk-arrow-nudge:focus-visible [aria-hidden="true"] {
+  transform: translateX(3px);
+}
+
+@media (hover: hover) {
+  .vk-action-primary:not(:disabled):hover,
+  .vk-action-secondary:not(:disabled):hover,
+  .vk-action-light:not(:disabled):hover,
+  .vk-action-outline:not(:disabled):hover,
+  .vk-linked-card:hover,
+  .vk-icon-button:not(:disabled):hover {
+    transform: translateY(-2px);
+  }
+
+  .vk-soft-card:hover,
+  .vk-faq-row:hover,
+  .vk-visual-lift:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .vk-action-primary,
+  .vk-action-secondary,
+  .vk-action-light,
+  .vk-action-outline,
+  .vk-icon-button,
+  .vk-linked-card,
+  .vk-soft-card,
+  .vk-faq-row,
+  .vk-subtle-link,
+  .vk-visual-frame,
+  .vk-gallery-frame,
+  .vk-visual-lift,
+  .vk-visual-image,
+  .vk-arrow-nudge svg,
+  .vk-arrow-nudge [aria-hidden="true"] {
+    transition-duration: 1ms;
+  }
+
+  .vk-action-primary:not(:disabled):hover,
+  .vk-action-secondary:not(:disabled):hover,
+  .vk-action-light:not(:disabled):hover,
+  .vk-action-outline:not(:disabled):hover,
+  .vk-linked-card:hover,
+  .vk-soft-card:hover,
+  .vk-faq-row:hover,
+  .vk-visual-lift:hover,
+  .vk-visual-frame:hover .vk-visual-image,
+  .vk-gallery-frame:hover .vk-visual-image,
+  .vk-visual-frame:focus-within .vk-visual-image,
+  .vk-gallery-frame:focus-within .vk-visual-image,
+  .vk-icon-button:not(:disabled):hover,
+  .vk-action-primary:not(:disabled):active,
+  .vk-action-secondary:not(:disabled):active,
+  .vk-action-light:not(:disabled):active,
+  .vk-action-outline:not(:disabled):active,
+  .vk-icon-button:not(:disabled):active,
+  .vk-arrow-nudge:hover svg,
+  .vk-arrow-nudge:focus-visible svg,
+  .vk-arrow-nudge:hover [aria-hidden="true"],
+  .vk-arrow-nudge:focus-visible [aria-hidden="true"] {
+    transform: none;
+  }
+}

@@ -1,0 +1,40 @@
+Vanguard Kids Academy
+
+Vanguard Kids Academy is a childcare, preschool, daycare, and early education provider with campuses in Dover, Florida and Fort Myers, Florida.
+
+Locations:
+- Dover campus: 12660 Sydney Rd, Dover, FL 33527. Phone: (813) 530-0032. Hours: Monday-Friday, 6:30 am - 6:00 pm.
+- Fort Myers campus: 465 Carolina Ave, Fort Myers, FL 33905. Phone: (239) 694-5912. Hours: Monday-Friday, 6:00 am - 6:00 pm.
+
+Age range:
+- Vanguard Kids Academy serves children from 6 weeks to 12 years.
+
+Programs:
+- Free VPK: Florida Voluntary Prekindergarten for eligible 4-year-olds.
+- School Readiness: childcare assistance for eligible Florida families.
+- Early Head Start: early care and learning support for eligible infants, toddlers, and families. Early Head Start information is tied to the Dover campus; Fort Myers should not be described as an Early Head Start location.
+
+Campus-specific services:
+- Dover: infant care, toddler care, preschool, Free VPK, School Readiness, Early Head Start information, After-School Care, Free Meals, and school pickup from Dover Elementary.
+- Fort Myers: infant care, toddler care, preschool, Free VPK, School Readiness, Before & After School care, Free Meals, and pickup from Manatee Elementary, Orange River Elementary School, Tice Elementary, Oak Hammock Middle School, and James Stephens Elementary.
+
+How to schedule a tour or apply:
+- Parents can use the Apply page to request next steps or schedule a tour.
+- Parents can also call the Dover or Fort Myers campus directly to confirm availability, program fit, and enrollment details.
+
+Important website routes:
+- / - homepage
+- /services - childcare services, campus-specific school-age care, free meals, and school pickup
+- /programs - overview of Free VPK, School Readiness, and Early Head Start
+- /programs/vpk - Free VPK details
+- /locations/dover - Dover campus details
+- /locations/fort-myers - Fort Myers campus details
+- /resources - financial assistance and program resources
+- /faq - frequently asked questions
+- /apply - tour and enrollment next steps
+- /privacy - privacy policy
+
+Lead form:
+- The enrollment popup submits directly to Formspree at https://formspree.io/f/mykqyree and is compatible with static hosting.
+
+Details such as availability, eligibility, hours, and program participation may change. Parents should contact the campus directly to confirm current information.
